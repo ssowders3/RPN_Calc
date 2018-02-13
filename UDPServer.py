@@ -5,7 +5,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 server_port = 12000
 
-server = ('143.215.100.43', server_port)
+server = (socket.gethostname(), server_port)
 sock.bind(server)
 print("Listening on " + socket.gethostname() + ":" + str(server_port))
 

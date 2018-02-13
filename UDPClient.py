@@ -29,7 +29,6 @@ while 1:
             message = str(operand1 + " " + operand2 + " " + tk)
             while 1:
                 try:
-                    print try_count
                     if (try_count < 3):
                         s.sendto(message, (ip_address, port_number))
                         try_count = try_count + 1
