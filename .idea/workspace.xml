@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08411888-ab42-4065-9e8e-57d76d5f2040" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DummyClient.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/DummyServer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TCPClient.py" afterPath="$PROJECT_DIR$/TCPClient.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TCPServer.py" afterPath="$PROJECT_DIR$/TCPServer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UDPClient.py" afterPath="$PROJECT_DIR$/UDPClient.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UDPServer.py" afterPath="$PROJECT_DIR$/UDPServer.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -61,8 +56,8 @@
       <file leaf-file-name="UDPClient.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UDPClient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+            <state relative-caret-position="361">
+              <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -73,7 +68,7 @@
       <file leaf-file-name="UDPServer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UDPServer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="384">
+            <state relative-caret-position="361">
               <caret line="28" column="46" lean-forward="false" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -197,6 +192,14 @@
       <option name="presentableId" value="Default" />
       <updated>1518487819974</updated>
     </task>
+    <task id="LOCAL-00001" summary="Working UDP Client and Server code">
+      <created>1518558710462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518558710462</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -225,6 +228,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Working UDP Client and Server code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working UDP Client and Server code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -285,7 +292,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UDPServer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
+        <state relative-caret-position="361">
           <caret line="28" column="46" lean-forward="false" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -295,8 +302,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UDPClient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="37" column="35" lean-forward="true" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
+        <state relative-caret-position="361">
+          <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
