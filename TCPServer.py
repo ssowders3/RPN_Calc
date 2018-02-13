@@ -5,18 +5,20 @@ import sys
 TCP_IP = '143.215.100.43'
 TCP_PORT = 9090
 BUFFER_SIZE = 1024  # Normally 1024, but we want fast response
-
-# create an INET, STREAMing socket
-serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-# bind the socket to a public host, and a well-known port
-serversocket.bind((TCP_IP, TCP_PORT))
-# become a server socket
-serversocket.listen(5)
-
+try:
+    serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    hostname = socket.gethostname()
+    serversocket.bind((hostname, TCP_PORT))
+    serversocket.listen(5)
+except:
+    raise Exception("Server unable to connect to Client")
 
 while 1:
     conn, addr = serversocket.accept()
-    data = conn.recv(BUFFER_SIZE)
+    try:
+        data = conn.recv(BUFFER_SIZE)
+    except:
+        raise Exception("Unable to receive data from Client")
     if data == "exit": break
     if not data: break
     tokens, stack = data.split(' '), []
@@ -37,7 +39,9 @@ while 1:
             stack = stack[:-1] + [math.log10(stack[-1])]
         else:
             stack.append(float(tk))
-    print "received data: ", data
-    conn.send(str(stack[0]))
+    try:
+        conn.send(str(stack[0]))
+    except:
+        raise Exception("Unable to send connection to Client")
 conn.close()
 

@@ -7,28 +7,49 @@ import socket
 BUFFER_SIZE = 1024
 MESSAGE = "exit"
 
-ip_address = sys.argv[1]
-port_number = int(sys.argv[2])
-expression = sys.argv[3]
-
+try:
+    ip_address = sys.argv[1]
+    port_number = int(sys.argv[2])
+    expression = sys.argv[3]
+except:
+    raise Exception("Error occurred while reading parameters")
 tokens, stack = expression.split(' '), []
-
 for tk in tokens:
     if tk == '+' or tk == '-' or tk == '*' or tk == '/' or tk == "^":
-        operand1 = str(stack[-2])
-        operand2 = str(stack[-1])
+        try:
+            operand1 = str(stack[-2])
+            operand2 = str(stack[-1])
+        except:
+            raise Exception("Unable to pop operands off Stack due to invalid Expression input")
         message = str(operand1 + " " + operand2 + " " + tk)
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((ip_address, port_number))
-        s.send(message)
-        data = s.recv(BUFFER_SIZE)
+        try:
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            s.connect((ip_address, port_number))
+        except:
+            raise Exception("Client was unable to connect to Server")
+        try:
+            s.send(message)
+        except:
+            raise Exception("Client was unable to send message to Server")
+        try:
+            data = s.recv(BUFFER_SIZE)
+        except:
+            raise Exception("Client was unable to recieve messages from Server")
         stack.append(float(data))
         s.close()
     else:
         stack.append(float(tk))
-
-print "received data: ", data
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((ip_address, port_number))
-s.send(MESSAGE)
+try:
+    print data
+except:
+    raise Exception("Invalid expression provided")
+try:
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((ip_address, port_number))
+except:
+    raise Exception("Client was unable to connect to Server")
+try:
+    s.send(MESSAGE)
+except:
+    raise Exception("Client was unable to send message to Server")
 s.close()
