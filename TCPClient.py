@@ -34,7 +34,7 @@ for tk in tokens:
         try:
             data = s.recv(BUFFER_SIZE)
         except socket.error:
-            raise Exception("Client was unable to recieve messages from Server")
+            raise Exception("Client was unable to receive messages from Server")
         stack.append(float(data))
         s.close()
     else:
