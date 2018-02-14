@@ -2,7 +2,7 @@ import socket
 import math
 try:
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-except:
+except socket.error:
     raise Exception("Unable to create socket")
 server_port = 12000
 try:
@@ -41,5 +41,5 @@ while True:
             stack.append(float(tk))
     try:
         sock.sendto(str(stack[0]), addr)
-    except:
+    except socket.error:
         raise Exception("Unable to send to client")
