@@ -3,7 +3,7 @@ import math
 import sys
 
 TCP_IP = '143.215.100.43'
-TCP_PORT = 9090
+TCP_PORT = 12000
 BUFFER_SIZE = 1024  # Normally 1024, but we want fast response
 try:
     serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
