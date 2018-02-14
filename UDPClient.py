@@ -16,7 +16,6 @@ try:
 except:
     raise Exception("Error occurred while reading parameters")
 
-try_count = 0
 while 1:
     tokens, stack = expression.split(' '), []
     for tk in tokens:
@@ -27,6 +26,7 @@ while 1:
             except:
                 raise Exception("Unable to pop operands off Stack due to invalid Expression input")
             message = str(operand1 + " " + operand2 + " " + tk)
+            try_count = 0
             while 1:
                 try:
                     if (try_count < 3):
@@ -37,7 +37,6 @@ while 1:
                         data = d[0]
                         addr = d[1]
                         break
-
                 except socket.timeout:
                     print 'send failed, trying again'
                     if try_count == 3:
