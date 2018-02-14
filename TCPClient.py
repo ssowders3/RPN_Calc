@@ -25,15 +25,15 @@ for tk in tokens:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
             s.connect((ip_address, port_number))
-        except:
+        except socket.error:
             raise Exception("Client was unable to connect to Server")
         try:
             s.send(message)
-        except:
+        except socket.error:
             raise Exception("Client was unable to send message to Server")
         try:
             data = s.recv(BUFFER_SIZE)
-        except:
+        except socket.error:
             raise Exception("Client was unable to recieve messages from Server")
         stack.append(float(data))
         s.close()
@@ -46,10 +46,10 @@ except:
 try:
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((ip_address, port_number))
-except:
+except socket.error:
     raise Exception("Client was unable to connect to Server")
 try:
     s.send(MESSAGE)
-except:
+except socket.error:
     raise Exception("Client was unable to send message to Server")
 s.close()

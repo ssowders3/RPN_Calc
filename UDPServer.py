@@ -1,14 +1,18 @@
 import socket
 import math
-
-sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
+try:
+    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+except:
+    raise Exception("Unable to create socket")
 server_port = 12000
-
-server = (socket.gethostname(), server_port)
-sock.bind(server)
-print("Listening on " + socket.gethostname() + ":" + str(server_port))
-
+try:
+    server = (socket.gethostname(), server_port)
+except socket.gaierror:
+    raise Exception("Unable to get host name")
+try:
+    sock.bind(server)
+except socket.error:
+    raise Exception("Unable to bind socket")
 while True:
     d = sock.recvfrom(1024)
     data = d[0]
@@ -35,4 +39,7 @@ while True:
             stack = stack[:-1] + [math.log10(stack[-1])]
         else:
             stack.append(float(tk))
-    sock.sendto(str(stack[0]), addr)
+    try:
+        sock.sendto(str(stack[0]), addr)
+    except:
+        raise Exception("Unable to send to client")

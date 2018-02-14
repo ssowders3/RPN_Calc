@@ -48,4 +48,7 @@ while 1:
             stack.append(float(tk))
     break
 print data
-s.sendto("exit", (ip_address, port_number))
+try:
+    s.sendto("exit", (ip_address, port_number))
+except socket.error:
+    raise Exception("Client failed to send to server")
