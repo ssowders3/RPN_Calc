@@ -14,7 +14,7 @@ try:
 except socket.error:
     raise Exception("Unable to bind socket")
 while True:
-    d = sock.recvfrom(1024)
+    d = sock.recvfrom(4096)
     data = d[0]
     addr = d[1]
 

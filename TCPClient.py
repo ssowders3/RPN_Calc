@@ -4,7 +4,7 @@ RPN calculator implementation.
 import sys
 import socket
 
-BUFFER_SIZE = 1024
+BUFFER_SIZE = 4096
 MESSAGE = "exit"
 
 try:

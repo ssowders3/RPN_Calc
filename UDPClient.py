@@ -33,7 +33,7 @@ while 1:
                         s.sendto(message, (ip_address, port_number))
                         try_count = try_count + 1
                         s.settimeout(2)
-                        d = s.recvfrom(4094)
+                        d = s.recvfrom(4096)
                         data = d[0]
                         addr = d[1]
                         break
